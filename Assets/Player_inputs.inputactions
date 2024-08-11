@@ -1,0 +1,180 @@
+{
+    "name": "Player_inputs",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "fa10b07f-e2f7-4c23-9fcd-a7370e7ec3e6",
+            "actions": [
+                {
+                    "name": "MovLeft",
+                    "type": "Button",
+                    "id": "06cd94c3-66f5-4784-b381-c79823a964d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MovRight",
+                    "type": "Button",
+                    "id": "98f96b63-8e3b-4fdf-a7a6-1e4914f5ea0c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "a5b82917-9dcd-423c-ba89-f66deec407f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MovDown",
+                    "type": "Button",
+                    "id": "b437b244-a909-4214-98ff-8081b0c6d7d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Run",
+                    "type": "Button",
+                    "id": "ec5a3fcb-0df0-483b-b228-062fdaa9b3e0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7811dc9e-f4af-466f-b11a-024bef2d04d6",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "MovLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d39006fe-e302-4d39-92b1-9be8c25a25dd",
+                    "path": "<XInputController>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "MovLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27429298-a1fc-4164-8394-d7548723a416",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "MovRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a8e6747-5141-4d86-8830-fdc179d294ad",
+                    "path": "<XInputController>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "MovRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "425233ac-ae5f-4dce-a5fb-cfc86baad00b",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "01464f80-c0a5-4cd6-9240-b8a6f56a694b",
+                    "path": "<XInputController>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ac699b3-46fe-4c67-9041-28e2fa06313f",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "MovDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f25e4d9-7965-4a26-8235-1efa3f9803d8",
+                    "path": "<XInputController>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "MovDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96b3c85a-f3dd-4e7d-a49f-0eaa688a487a",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5542f17-2168-484b-a65c-ae18b8928374",
+                    "path": "<XInputController>/leftTrigger",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Bruss_inputs;Turna_inputs",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Bruss_inputs",
+            "bindingGroup": "Bruss_inputs",
+            "devices": []
+        },
+        {
+            "name": "Turna_inputs",
+            "bindingGroup": "Turna_inputs",
+            "devices": []
+        }
+    ]
+}
