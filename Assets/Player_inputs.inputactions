@@ -19,6 +19,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Exit Game",
+                    "type": "Button",
+                    "id": "99bbe9a0-6834-4d03-b486-66143b1e1aab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -30,6 +39,17 @@
                     "processors": "",
                     "groups": "Flappy Cremu",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe69d416-5ed2-4906-882c-1832e3f2d232",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Flappy Cremu",
+                    "action": "Exit Game",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

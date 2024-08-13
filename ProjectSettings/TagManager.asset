@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Background
   - Ground
+  - Logic
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - Ground
   - Post Processing
-  - 
+  - Cremu
   - 
   - 
   - 

@@ -15,6 +15,16 @@ public class CremuScript : MonoBehaviour
     private Sprite cremuFall;
     public float FallingThreshold = -10f;
     public bool isFalling = true;
+    public PlayerInput input;
+    public AudioSource cremuNoise;
+    public AudioClip deathNoise;
+    public float deathVolume = 0.5f;
+
+    public float deathHeight;
+    public float deathDrop;
+
+    public LogicScript logic;
+    public bool cremuIsAlive = true;
 
     private void Start()
     {
@@ -22,6 +32,8 @@ public class CremuScript : MonoBehaviour
 
         cremuFall = cremuSprites[0];
         cremuJump = cremuSprites[1];
+
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     // Update is called once per frame
@@ -47,12 +59,47 @@ public class CremuScript : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = cremuJump;
         }
         //cremuBody.velocity = Vector2.up * flapStrength;
-    }
+
+        if(cremuIsAlive == false)
+        {
+            input.actions.Disable();
+            cremuNoise.PlayOneShot(deathNoise, deathVolume);
+
+        }
+
+        if (cremuBody.position.y > deathHeight)
+        {
+            CremuDeath();
+        }
+
+        if (cremuBody.position.y < deathDrop)
+        {
+            CremuDeath();
+        }
+}
 
     public void Jump()
     {
         Debug.Log("Jump");
         cremuBody.velocity = Vector2.up * flapStrength;
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("You are leaving the game :(((");
+        Application.Quit();
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CremuDeath();
+    }
+
+    void CremuDeath()
+    {
+        logic.gameOver();
+        cremuIsAlive = false;
     }
 
 }
