@@ -100,6 +100,7 @@ public class CremuScript : MonoBehaviour
     {
         logic.gameOver();
         cremuIsAlive = false;
+
     }
 
 }
