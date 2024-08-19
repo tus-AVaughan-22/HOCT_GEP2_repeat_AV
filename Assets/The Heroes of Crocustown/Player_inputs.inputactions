@@ -4,8 +4,30 @@
         {
             "name": "Player",
             "id": "fa10b07f-e2f7-4c23-9fcd-a7370e7ec3e6",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "fa36e08b-5562-45ba-82b7-609b65bf82bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0275eb6b-1e2d-4021-a263-8eeb02ac2db1",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         },
         {
             "name": "Flappy Cremu",
