@@ -12,4 +12,4 @@ EditorBuildSettings:
     path: Assets/FlappyCremu/Flappy_cremu.unity
     guid: dbf701fc912be91488b1f13df0bfc131
   m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 51754f9f0773ef341bfc89487a15b29a, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 936f3a33c5de19c44957370e3b0492e5, type: 2}
