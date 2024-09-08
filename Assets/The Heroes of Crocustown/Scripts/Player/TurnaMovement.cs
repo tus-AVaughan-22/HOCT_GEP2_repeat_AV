@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BrussMovement : MonoBehaviour
+public class TurnaMovement : MonoBehaviour
 {
-    public bool brussIsActive;
+    public bool turnaIsActive;
+    public GameObject brussPlayer;
     public GameObject turnaPlayer;
 
-    public PlayerInput brussInput; 
-    public Rigidbody2D brussBody;
+    public PlayerInput turnaInput;
+    public Rigidbody2D turnaBody;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -20,29 +21,29 @@ public class BrussMovement : MonoBehaviour
     public bool facingRight = true;
     public bool isMoving = false;
 
-    public Animator bAnimator;
-    public TurnaMovement turnaScript;
+    //public Animator tAnimator;
+    public BrussMovement brussScript;
 
     private void Start()
     {
-        brussIsActive = true;
+        turnaIsActive = false;
     }
 
     void Update()
     {
-        brussBody.velocity = new Vector2(horizontal * speed, brussBody.velocity.y);
-        bAnimator.SetFloat("playerSpeed", Mathf.Abs(horizontal)); // Math f Abs (absolute) makes it so the returned value is always pos
+        turnaBody.velocity = new Vector2(horizontal * speed, turnaBody.velocity.y);
+       // tAnimator.SetFloat("playerSpeed", Mathf.Abs(horizontal)); // Math f Abs (absolute) makes it so the returned value is always pos
     }
 
     private void FixedUpdate()
     {
-
-        if (brussIsActive == false)
+  
+        if(turnaIsActive == false)
         {
-            Follow();
+           Follow();
         }
 
-        if (Mathf.Abs(horizontal) == 0f)
+        if(Mathf.Abs(horizontal) == 0f)
         {
             isMoving = false;
         }
@@ -69,12 +70,12 @@ public class BrussMovement : MonoBehaviour
         if (context.performed && IsGrounded())
         {
             Debug.Log("jumping!!!!!");
-            brussBody.velocity = new Vector2(brussBody.velocity.x, jumpStrength);
+            turnaBody.velocity = new Vector2(turnaBody.velocity.x, jumpStrength);
         }
 
-        if (context.canceled && brussBody.velocity.y > 0f)
+        if (context.canceled && turnaBody.velocity.y > 0f)
         {
-            brussBody.velocity = new Vector2(brussBody.velocity.x, brussBody.velocity.y * 0.5f);
+            turnaBody.velocity = new Vector2(turnaBody.velocity.x, turnaBody.velocity.y * 0.5f);
         }
     }
 
@@ -85,13 +86,13 @@ public class BrussMovement : MonoBehaviour
         {
             Debug.Log("look at you go!!!");
             speed = 12f;
-            bAnimator.SetBool("IsRunning", true);
+          //  tAnimator.SetBool("IsRunning", true);
         }
 
         if(context.canceled)
         {
             speed = 8f;
-            bAnimator.SetBool("IsRunning", false);
+          //  tAnimator.SetBool("IsRunning", false);
         }
     }
 
@@ -131,19 +132,21 @@ public class BrussMovement : MonoBehaviour
 
     public void Swap(InputAction.CallbackContext context)
     {
-        if (context.performed && brussIsActive == true)
+        if (context.performed && turnaIsActive == true)
         {
-            brussIsActive = false;
-            brussInput.enabled = false;
-            turnaScript.turnaIsActive = true;
-            turnaScript.turnaInput.enabled = true;
+            Debug.Log("swap is pressed");
+            turnaIsActive = false;
+            turnaInput.enabled = false;
+            brussScript.brussIsActive = true;
+            brussScript.brussInput.enabled = true;
         }
     }
+
     private void Follow()
     {
         Debug.Log("Following!");
 
-        transform.position = Vector2.MoveTowards(this.transform.position, turnaPlayer.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(this.transform.position, brussPlayer.transform.position, speed * Time.deltaTime);
 
     }
 }
